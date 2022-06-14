@@ -161,13 +161,14 @@ def main():
   os.makedirs(output_path,exist_ok=True)
   
   image_name = imag_path.split('/')[-1]
+  folder_name = image_name.split('.')[0]
   
-  inference_image.save(f"{output_path}/{image_name}")
+  inference_image.save(f"{output_path}/{folder_name}/{image_name}")
   
   dictionary = {"document name":doc_name,"document": doc_text , "form": filtered_words}
   
   #with open(f"{output_path}/jsonOutput.json","w",encoding='utf8') as outfile:
-  with open(f"{output_path}/{image_name}.json","w",encoding='utf8') as outfile:
+  with open(f"{output_path}/{folder_name}/{image_name}.json","w",encoding='utf8') as outfile:
       json.dump(dictionary, outfile,ensure_ascii=False)
 
 if __name__ == '__main__':
