@@ -160,12 +160,12 @@ def main():
   output_path = sys.argv[3]
   os.makedirs(output_path,exist_ok=True)
   
-  inference_image.save(f"{output_path}/{image_path}")
+  inference_image.save(f"{output_path}/{imag_path}")
   
   dictionary = {"document name":doc_name,"document": doc_text , "form": filtered_words}
   
   #with open(f"{output_path}/jsonOutput.json","w",encoding='utf8') as outfile:
-  with open(f"{output_path}/{image_path}.json","w",encoding='utf8') as outfile:
+  with open(f"{output_path}/{imag_path}.json","w",encoding='utf8') as outfile:
       json.dump(dictionary, outfile,ensure_ascii=False)
 
 if __name__ == '__main__':
